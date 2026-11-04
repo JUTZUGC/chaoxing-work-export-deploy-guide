@@ -1,0 +1,114 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "chaoxing-work-export",
+    "nameCn": "Chaoxing Work Export",
+    "repoName": "chaoxing-work-export-deploy-guide",
+    "oneLiner": "把学习通的作业、考试与章节练习题目导出成 Word 试卷，方便期末复习",
+    "officialRepo": "https://github.com/chenhuilin2/chaoxing-work-export",
+    "officialDocs": "https://github.com/chenhuilin2/chaoxing-work-export#readme",
+    "stars": "38",
+    "license": "GPL-3.0",
+    "highlights": [
+      "38 stars，更新到 2026-11",
+      "导出 Word、TXT、Markdown",
+      "保留图片、上下标与换行",
+      "支持错题汇总与答案解析",
+      "支持多章节合并或拆分",
+      "TypeScript 编写，可自行构建"
+    ],
+    "mcpSupport": "项目本身不带 MCP；本仓库的 MCP server 提供构建、安装与导出说明。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-11-04",
+    "verification": [
+      [
+        "README 确认构建命令、产物路径与安装方式",
+        "已核对 2026-11-04"
+      ],
+      [
+        "确认仓库未归档、最近提交为 2026-11-01",
+        "已核对 2026-11-04"
+      ],
+      [
+        "未实测依赖安装、构建与题目导出",
+        "说明 2026-11-04"
+      ],
+      [
+        "MCP 冒烟：initialize / tools/list 返回 get_guide、search_guide、get_project_info",
+        "已验证 2026-11-04"
+      ],
+      [
+        "非目标宿主调用 get_guide 被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-11-04"
+      ]
+    ],
+    "deploy": {
+      "type": "script",
+      "requires": [
+        "node"
+      ],
+      "steps": [
+        "git clone https://github.com/chenhuilin2/chaoxing-work-export.git",
+        "cd chaoxing-work-export",
+        "npm install",
+        "npm run build",
+        "ls -l dist"
+      ],
+      "stepsPs": [
+        "git clone https://github.com/chenhuilin2/chaoxing-work-export.git",
+        "Set-Location chaoxing-work-export",
+        "npm install",
+        "npm run build",
+        "Get-ChildItem dist"
+      ],
+      "source": "https://github.com/chenhuilin2/chaoxing-work-export#development"
+    },
+    "pitfalls": [
+      "npm install 失败：确认 Node 版本 ≥ 20",
+      "构建报类型错误：先跑 `npm run typecheck` 看具体文件",
+      "导入后无反应：确认当前页面是作业/考试/章节练习",
+      "导出缺题：页面改版，等更新或调整选择器",
+      "Word 图片丢失：确认浏览器允许跨域读取图片",
+      "多章节合并失败：改为按章节拆分导出",
+      "脚本与其它学习通脚本冲突：只保留一个启用"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/chaoxing-work-export-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/chaoxing-work-export-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "Chaoxing Work Export",
+    "学习通 作业 导出",
+    "学习通 题目 导出 Word",
+    "学习通 试卷 导出",
+    "超星 作业 导出",
+    "学习通 错题 整理",
+    "学习通 期末 复习",
+    "学习通 刷题 工具",
+    "chaoxing-work-export 教程",
+    "Chaoxing Work Export deploy guide"
+  ],
+  "topics": [
+    "xuexitong",
+    "chaoxing",
+    "userscript",
+    "typescript",
+    "export",
+    "study-tools"
+  ]
+}

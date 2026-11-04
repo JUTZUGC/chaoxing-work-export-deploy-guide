@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "chaoxing-work-export-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}
